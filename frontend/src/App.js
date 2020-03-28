@@ -5,7 +5,7 @@ import Navbar from './components/layout/Navbar';
 
 const App = () => {
   return (
-    <div style={{ height: '400px', width: '200px' }}>
+    <div style={{ width: '200px' }}>
       <header>
         <Navbar />
       </header>

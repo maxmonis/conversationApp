@@ -10,13 +10,21 @@ const user = {
 const User = () => {
   return (
     <div>
-      <img src={user.photo} style={{ height: '25px', borderRadius: '50%' }} />{' '}
+      <img
+        src={user.photo}
+        alt='Kendrick'
+        style={{ height: '25px', borderRadius: '50%' }}
+      />{' '}
       {user.name} {user.status}
     </div>
   );
 };
 
 export const profilePicture = (
-  <img src={user.photo} style={{ height: '25px', borderRadius: '50%' }} />
+  <img
+    src={user.photo}
+    alt='Kendrick'
+    style={{ height: '25px', borderRadius: '50%' }}
+  />
 );
 export default User;
