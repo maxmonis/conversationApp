@@ -1,14 +1,17 @@
 import React from 'react';
 
 import ConversationApp from './components/pages/ConversationApp';
+import Navbar from './components/layout/Navbar';
 
 const App = () => {
   return (
-    <div>
+    <div style={{ height: '400px', width: '200px' }}>
       <header>
-        <h1>Hi Ben!</h1>
-        <ConversationApp />
+        <Navbar />
       </header>
+      <main>
+        <ConversationApp />
+      </main>
     </div>
   );
 };

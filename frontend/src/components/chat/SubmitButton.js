@@ -2,7 +2,7 @@ import React from 'react';
 
 const SubmitButton = ({ handleSubmit }) => {
   return (
-    <div>
+    <div style={{ marginLeft: 'auto', marginRight: 0 }}>
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );

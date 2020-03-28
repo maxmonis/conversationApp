@@ -4,9 +4,9 @@ import ConversationBlock from './ConversationBlock';
 
 const Conversation = ({ conversation }) => {
   return (
-    <div>
-      {conversation.map(statement => (
-        <ConversationBlock key={statement} statement={statement} />
+    <div style={{ backgroundColor: 'blue', minHeight: '100px' }}>
+      {conversation.map((statement, index) => (
+        <ConversationBlock key={`${statement}${index}`} statement={statement} />
       ))}
     </div>
   );

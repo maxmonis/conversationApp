@@ -1,13 +1,12 @@
 import React from 'react';
 
 import TextBubble from './TextBubble';
-import UserView from './UserView';
+import { profilePicture } from '../user/User';
 
 const ConversationBlock = ({ statement }) => {
   return (
-    <div>
-      <UserView />
-      <TextBubble statement={statement} />
+    <div style={{ display: 'flex', flex: 'row' }}>
+      {profilePicture} <TextBubble statement={statement} />
     </div>
   );
 };

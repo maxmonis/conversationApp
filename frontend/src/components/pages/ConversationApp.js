@@ -10,16 +10,17 @@ const ConversationApp = () => {
     setText(e.target.value);
   };
   const handleSubmit = () => {
-    setConversation([...conversation, text]);
+    text && setConversation([...conversation, text]);
+    setText('');
   };
   return (
     <div>
+      <Conversation conversation={conversation} />
       <ChatForm
         text={text}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <Conversation conversation={conversation} />
     </div>
   );
 };
