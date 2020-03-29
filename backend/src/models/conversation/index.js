@@ -1,3 +1,3 @@
-import ConversationModel from './conversation';
+import Conversation from './conversation';
 
-export default ConversationModel;
+export default Conversation;

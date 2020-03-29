@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
+import MessageSchema from '../message/schema'
 const Schema = mongoose.Schema;
 
 const conversationSchema = new Schema({
-  chat: [String]
+  messages: [MessageSchema]
 })
 
 export default conversationSchema;
