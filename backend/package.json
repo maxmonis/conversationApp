@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "Backend for conversationApp",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build:develop": "yarn clean && webpack --mode development",
+    "build:production": "yarn clean && webpack --mode production",
+    "clean": "rimraf dist",
+    "serve": "yarn build:develop && node dist/js/bundle.js",
+    "test": "newman run test/newman/ConversationApp.postman_collection.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "newman": "^4.6.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "body-parser": "^1.19.0",
+    "core-js": "3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.6",
+    "rimraf": "^3.0.2"
+  }
+}
