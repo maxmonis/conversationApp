@@ -1,4 +1,4 @@
-import ConversationModel from '../../models/conversation/';
+import ConversationModel from '../../models/conversation';
 
 const RESPONSE_CODES = {
   NOT_FOUND: 'Could not find conversation',
@@ -7,19 +7,20 @@ const RESPONSE_CODES = {
 
 
 /**
- * Save a new chat to a conversations
+ * Save a new message to a conversation and return the message if successful
  */
-async function addToConversation (req, res) {
-  const chat = req.body.chat;
-  console.log(`User says ${chat}`);
+async function addMessageToConversation (req, res) {
+  const message = req.body.message;
+  console.log(`User says ${message}`);
   try {
     const conversation = await ConversationModel.findById(req.params.conversationId);
+    console.log('conversation', conversation);
     if (!conversation) {
       res.status(500).send(RESPONSE_CODES.NOT_FOUND);
     }
-    conversation.chat.push(chat);
+    conversation.messages.push(message);
     await conversation.save();
-    res.send(conversation);
+    res.send(message);
   } catch (err) {
     console.log('Error updating conversation', err);
     res.status(500).send(RESPONSE_CODES.ERROR);
@@ -27,5 +28,5 @@ async function addToConversation (req, res) {
 }
 
 export {
-  addToConversation,
+  addMessageToConversation,
 }
