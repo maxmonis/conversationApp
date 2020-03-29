@@ -9,13 +9,16 @@ const user = {
 };
 const User = () => {
   return (
-    <div>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <img
         src={user.photo}
         alt='Kendrick'
-        style={{ height: '25px', borderRadius: '50%' }}
+        style={{ height: '32px', borderRadius: '50%', marginRight: '8px' }}
       />{' '}
-      {user.name} {user.status}
+      <div>
+        <div style={{ fontSize: '15px', fontWeight: 500, lineHeight: '1.25em' }}>{user.name}</div> 
+        <div style={{ fontSize: '12px', fontWeight: 500, lineHeight: '1.25em' }}>{user.status}</div>
+      </div>
     </div>
   );
 };

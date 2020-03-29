@@ -2,17 +2,18 @@ import React from 'react';
 
 import ConversationApp from './components/pages/ConversationApp';
 import Navbar from './components/layout/Navbar';
+import AppLayout from './components/layout/AppLayout';
 
 const App = () => {
   return (
-    <div style={{ width: '200px' }}>
+    <AppLayout>
       <header>
         <Navbar />
       </header>
       <main>
         <ConversationApp />
       </main>
-    </div>
+    </AppLayout>
   );
 };
 
