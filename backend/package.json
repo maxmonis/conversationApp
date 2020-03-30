@@ -4,7 +4,6 @@
   "description": "Backend for conversationApp",
   "main": "index.js",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "build:develop": "yarn clean && webpack --mode development",
     "build:production": "yarn clean && webpack --mode production",
