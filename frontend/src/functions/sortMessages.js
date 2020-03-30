@@ -9,7 +9,7 @@ export default messages => {
       sent.push(message);
     } else {
       sent.length && textBlocks.push({ type: 'sent', texts: sent });
-      set = [];
+      sent = [];
       received.push(message);
     }
   }
