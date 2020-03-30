@@ -4,10 +4,12 @@ import ConversationBlock from './ConversationBlock';
 import sortMessages from '../../functions/sortMessages';
 
 const Conversation = ({ conversation }) => {
-  const textBlock = sortMessages(conversation);
+  const textBlocks = sortMessages(conversation);
   return (
     <div style={{ backgroundColor: 'black', height: '300px' }}>
-      <ConversationBlock textBlock={conversation} />
+      {textBlocks.map((textBlock, index) => (
+        <ConversationBlock textBlock={textBlock} key={index} />
+      ))}
     </div>
   );
 };

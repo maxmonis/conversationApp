@@ -6,11 +6,11 @@ export default messages => {
     if (message.user === 'me') {
       received.length && textBlocks.push({ type: 'received', texts: received });
       received = [];
-      sent.push(message);
+      sent.push(message.text);
     } else {
       sent.length && textBlocks.push({ type: 'sent', texts: sent });
       sent = [];
-      received.push(message);
+      received.push(message.text);
     }
   }
   sent.length && textBlocks.push({ type: 'sent', texts: sent });

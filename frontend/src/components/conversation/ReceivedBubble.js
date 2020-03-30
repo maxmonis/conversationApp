@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextBubble = ({ text, radius }) => {
+const ReceivedBubble = ({ text, radius }) => {
   return (
     <div
       style={{
@@ -12,7 +12,6 @@ const TextBubble = ({ text, radius }) => {
     >
       <p
         style={{
-          backgroundColor: 'white',
           borderRadius: radius,
           fontSize: '15px',
           padding: '5px 10px',
@@ -27,4 +26,4 @@ const TextBubble = ({ text, radius }) => {
   );
 };
 
-export default TextBubble;
+export default ReceivedBubble;

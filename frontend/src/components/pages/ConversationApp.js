@@ -5,16 +5,16 @@ import Conversation from '../conversation/Conversation';
 
 const ConversationApp = () => {
   const [conversation, setConversation] = useState([
-    'Test message',
-    'Second message',
-    'Third message, also for testing purposes'
+    { user: 'me', text: 'Test message' },
+    { user: 'me', text: 'Second message' },
+    { user: 'Kendrick', text: 'Third message, also for testing purposes' }
   ]);
   const [text, setText] = useState('');
   const handleChange = e => {
     setText(e.target.value);
   };
   const handleSubmit = () => {
-    text && setConversation([...conversation, text]);
+    text && setConversation([...conversation, { user: 'me', text: text }]);
     setText('');
   };
   return (
