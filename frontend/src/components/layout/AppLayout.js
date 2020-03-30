@@ -15,7 +15,8 @@ const AppLayout = ({ children }) => {
           minWidth: '360px',
           borderRadius: '8px',
           border: '1px solid transparent',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          height: '455px'
         }}
       >
         {children}

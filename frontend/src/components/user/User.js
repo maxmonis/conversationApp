@@ -12,7 +12,7 @@ const User = () => {
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <img
         src={user.photo}
-        alt='Kendrick'
+        alt='Profile Photo'
         style={{ height: '32px', borderRadius: '50%', marginRight: '8px' }}
       />{' '}
       <div>
@@ -26,8 +26,8 @@ const User = () => {
 export const profilePicture = (
   <img
     src={user.photo}
-    alt='Kendrick'
-    style={{ height: '25px', borderRadius: '50%' }}
+    alt='Profile Photo'
+    style={{ height: '28px', borderRadius: '50%' }}
   />
 );
 export default User;
