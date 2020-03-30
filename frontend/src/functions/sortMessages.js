@@ -1,13 +1,15 @@
 export default messages => {
-  const sent = [];
-  const received = [];
+  let sent = [];
+  let received = [];
   const textBlocks = [];
   for (const message of messages) {
     if (message.user === 'me') {
       received.length && textBlocks.push({ type: 'received', texts: received });
+      received = [];
       sent.push(message);
     } else {
       sent.length && textBlocks.push({ type: 'sent', texts: sent });
+      set = [];
       received.push(message);
     }
   }
