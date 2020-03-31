@@ -12,11 +12,11 @@ const AppLayout = ({ children }) => {
     >
       <div
         style={{
-          minWidth: '360px',
           borderRadius: '8px',
           border: '1px solid transparent',
           overflow: 'hidden',
-          height: '455px'
+          height: '455px',
+          width: '338px'
         }}
       >
         {children}

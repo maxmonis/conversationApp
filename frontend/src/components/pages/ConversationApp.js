@@ -5,9 +5,22 @@ import Conversation from '../conversation/Conversation';
 
 const ConversationApp = () => {
   const [conversation, setConversation] = useState([
-    { user: 'me', text: 'Test message' },
-    { user: 'me', text: 'Second message' },
-    { user: 'Kendrick', text: 'Third message, also for testing purposes' }
+    { user: 'Kendrick', text: 'Received message' },
+    {
+      user: 'Kendrick',
+      text:
+        'Second received message, which is longer so as to demonstrate how long messages are rendered'
+    },
+    { user: 'me', text: 'Sent message, also for testing purposes' },
+    {
+      user: 'Kendrick',
+      text: 'An additional message, the third thus far and medium length'
+    },
+    {
+      user: 'me',
+      text: 'Second sent message, also for testing purposes'
+    },
+    { user: 'Kendrick', text: 'Fourth' }
   ]);
   const [text, setText] = useState('');
   const handleChange = e => {

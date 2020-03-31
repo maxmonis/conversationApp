@@ -19,8 +19,7 @@ const SentBubble = ({ text, radius }) => {
           fontSize: '15px',
           padding: '5px 10px',
           margin: '2px',
-          backgroundColor: 'rgb(0, 132, 255)',
-          float: 'right'
+          backgroundColor: 'rgb(0, 132, 255)'
         }}
       >
         {text}

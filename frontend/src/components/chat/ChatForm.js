@@ -10,7 +10,7 @@ const ChatForm = ({ text, handleChange, handleSubmit }) => {
         display: 'flex',
         flex: 'row',
         height: '53px',
-        float: 'right'
+        borderRadius: '0 0 8px 8px'
       }}
     >
       <TextInput text={text} handleChange={handleChange} />

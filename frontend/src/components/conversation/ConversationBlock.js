@@ -5,11 +5,14 @@ import ReceivedBlock from './ReceivedBlock';
 
 const ConversationBlock = ({ textBlock }) => {
   const { type, texts } = textBlock;
-  console.log(textBlock);
-  return type === 'received' ? (
-    <ReceivedBlock texts={texts} />
-  ) : (
-    <SentBlock texts={texts} />
+  return (
+    <div style={{ padding: '0 12px 8px' }}>
+      {type === 'received' ? (
+        <ReceivedBlock texts={texts} />
+      ) : (
+        <SentBlock texts={texts} />
+      )}
+    </div>
   );
 };
 
