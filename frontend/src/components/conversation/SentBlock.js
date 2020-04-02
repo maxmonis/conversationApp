@@ -4,7 +4,12 @@ import SentBubble from './SentBubble';
 
 const SentBlock = ({ texts }) => {
   return (
-    <div style={{ display: 'flex', paddingBottom: '3px', paddingTop: '2px' }}>
+    <div
+      style={{
+        display: 'flex',
+        padding: '2px 0 3px'
+      }}
+    >
       <div style={{ lineHeight: '20px' }}>
         {texts.map((text, index) => {
           const radius =

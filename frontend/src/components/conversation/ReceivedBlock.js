@@ -5,7 +5,7 @@ import { profilePicture } from '../user/User';
 
 const ReceivedBlock = ({ texts }) => {
   return (
-    <div style={{ display: 'flex', paddingBottom: '3px', paddingTop: '2px' }}>
+    <div style={{ display: 'flex', padding: '3px 0 2px' }}>
       <div
         style={{
           display: 'flex',

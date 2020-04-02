@@ -14,9 +14,12 @@ const ReceivedBubble = ({ text, radius }) => {
         style={{
           borderRadius: radius,
           fontSize: '15px',
-          padding: '5px 10px',
+          padding: '7px 12px 8px',
           margin: '2px',
-          backgroundColor: 'rgb(62, 64, 66)'
+          backgroundColor: 'rgb(62, 64, 66)',
+          overflowWrap: 'break-word',
+          whiteSpace: 'pre-wrap',
+          wordBreak: 'break-word'
         }}
       >
         {text}
