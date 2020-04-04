@@ -1,21 +1,17 @@
 import React from 'react';
 
-import TextBubble from './TextBubble';
-import { profilePicture } from '../user/User';
+import SentBlock from './SentBlock';
+import ReceivedBlock from './ReceivedBlock';
 
 const ConversationBlock = ({ textBlock }) => {
+  const { type, texts } = textBlock;
   return (
-    <div style={{ display: 'flex', height: '30px' }}>
-      {textBlock.map((text, index) => {
-        return index < textBlock.length - 1 ? (
-          <TextBubble key={(text, index)} text={text} />
-        ) : (
-          <div key={(text, index)} style={{ display: 'flex', flex: 'row' }}>
-            {profilePicture}
-            <TextBubble text={text} />
-          </div>
-        );
-      })}
+    <div style={{ padding: '0 12px 8px' }}>
+      {type === 'received' ? (
+        <ReceivedBlock texts={texts} />
+      ) : (
+        <SentBlock texts={texts} />
+      )}
     </div>
   );
 };
