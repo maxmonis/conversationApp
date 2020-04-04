@@ -4,7 +4,8 @@ import ConversationBlock from './ConversationBlock';
 import sortMessages from '../../functions/sortMessages';
 
 const Conversation = ({ conversation }) => {
-  const textBlocks = sortMessages(conversation);
+  console.log(conversation.messages);
+  const textBlocks = sortMessages(conversation.messages);
   const messagesEndRef = useRef(null);
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
