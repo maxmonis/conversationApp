@@ -2,16 +2,12 @@ import React from 'react';
 import TextInput from './TextInput';
 import SubmitButton from './SubmitButton';
 
+import './ChatForm.css';
+
 const ChatForm = ({ text, handleChange, handleSubmit }) => {
   return (
     <div
-      style={{
-        backgroundColor: 'black',
-        display: 'flex',
-        flex: 'row',
-        height: '53px',
-        borderRadius: '0 0 8px 8px'
-      }}
+      className="chat-form"
     >
       <TextInput text={text} handleChange={handleChange} />
       <SubmitButton handleSubmit={handleSubmit} />

@@ -1,0 +1,11 @@
+.chat-form {
+  background-color: black;
+  display: flex;
+  flex: row;
+  border-radius: 0 0 8px 8px;
+}
+
+.chat-form .text-input {
+  padding: 8px;
+  box-sizing: border-box;
+}

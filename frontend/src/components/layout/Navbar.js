@@ -1,21 +1,11 @@
 import React from 'react';
 
 import User from '../user/User';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <div
-      style={{
-        backgroundColor: 'black',
-        display: 'flex',
-        flex: 'row',
-        color: 'white',
-        padding: '8px',
-        height: '48px',
-        boxSizing: 'border-box',
-        borderBottom: '1px solid grey'
-      }}
-    >
+    <div className="navbar">
       <User />
     </div>
   );

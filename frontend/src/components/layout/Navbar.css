@@ -1,0 +1,15 @@
+.navbar {
+  background-color: black;
+  display: flex;
+  flex: row;
+  color: white;
+  padding: 8px;
+  height: 48px;
+  box-sizing: border-box;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.navbar:hover {
+  background-color: rgb(58,59,60);
+}

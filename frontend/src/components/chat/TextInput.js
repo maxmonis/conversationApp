@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextInput = ({ text, handleChange }) => {
   return (
-    <div>
+    <div className="text-input">
       <input
         value={text}
         onChange={handleChange}
