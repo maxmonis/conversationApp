@@ -3,13 +3,13 @@ import React, { useEffect, useRef } from 'react';
 import ConversationBlock from './ConversationBlock';
 import sortMessages from '../../functions/sortMessages';
 
-const Conversation = ({ conversation }) => {
-  console.log(conversation.messages);
-  const textBlocks = sortMessages(conversation.messages);
+const Conversation = ({ messages }) => {
+  console.log(messages);
+  const textBlocks = sortMessages(messages);
   const messagesEndRef = useRef(null);
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-  }, [conversation]);
+  }, [messages]);
   return (
     <div
       style={{

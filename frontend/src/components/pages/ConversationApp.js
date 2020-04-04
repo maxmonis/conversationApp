@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import ChatForm from '../chat/ChatForm';
 import Conversation from '../conversation/Conversation';
 
-import fetchConversation from '../../utils/fetchConversation';
+import fetchConversation from '../../functions/fetchConversation';
+import sendConversationMessage, { exampleUser } from '../../functions/sendConversationMessage';
 
 const ConversationApp = () => {
   
@@ -35,12 +36,23 @@ const ConversationApp = () => {
     });
   }, []);
 
+  const [messages, updateMessages] = useState(conversation.messages);
+  useEffect(() => {
+    updateMessages(conversation.messages);
+  }, [conversation])
+
   const [text, setText] = useState('');
   const handleChange = e => {
     setText(e.target.value);
   };
-  const handleSubmit = () => {
-    text && setConversation([...conversation, { user: 'me', text: text }]);
+
+  const handleSubmit = async () => {
+    const savedMessage = await sendConversationMessage(text);
+    if (savedMessage) {
+      updateMessages([...messages, savedMessage]);
+    } else {
+      // Display that the message did not send!
+    }
     setText('');
   };
 
@@ -53,7 +65,7 @@ const ConversationApp = () => {
           flexDirection: 'column'
         }}
       >
-        { conversation && <Conversation conversation={conversation} /> }
+        { conversation && <Conversation messages={messages} /> }
         <ChatForm
           text={text}
           handleChange={handleChange}
