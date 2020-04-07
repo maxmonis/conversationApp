@@ -1,19 +1,25 @@
 import React from 'react';
 
+import { Provider } from 'react-redux';
+
+import store from './store';
+
+import AppLayout from './components/layout/AppLayout';
 import ConversationApp from './components/pages/ConversationApp';
 import Navbar from './components/layout/Navbar';
-import AppLayout from './components/layout/AppLayout';
 
 const App = () => {
   return (
-    <AppLayout>
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        <ConversationApp />
-      </main>
-    </AppLayout>
+    <Provider store={store}>
+      <AppLayout>
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <ConversationApp />
+        </main>
+      </AppLayout>
+    </Provider>
   );
 };
 

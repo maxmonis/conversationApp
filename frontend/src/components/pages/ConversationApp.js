@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
+import { connect } from 'react-redux';
+
+import { getConversation } from '../../actions/conversationActions';
+
 import ChatForm from '../chat/ChatForm';
 import Conversation from '../conversation/Conversation';
 
-import fetchConversation from '../../functions/fetchConversation';
 import sendConversationMessage from '../../functions/sendConversationMessage';
 
-const ConversationApp = () => {
-  // Start with no conversation
-  const [conversation, setConversation] = useState(null);
-
-  /**
-   * Fetch the conversation from the server
-   */
+const ConversationApp = ({
+  conversation: { conversation, loading },
+  getConversation,
+}) => {
   useEffect(() => {
-    fetchConversation()
-      .then((retrievedConversation) => {
-        if (!retrievedConversation) {
-          // Display an error message. We couldn't fetch the conversation :(
-        } else {
-          setConversation(retrievedConversation);
-        }
-      })
-      .catch(console.log('Failed to fetch conversation in ConversationApp'));
+    getConversation();
+    // eslint-disable-next-line
   }, []);
 
   const [messages, updateMessages] = useState([]);
@@ -46,7 +39,9 @@ const ConversationApp = () => {
     }
   };
 
-  return (
+  return loading ? (
+    <h1>Loading...</h1>
+  ) : (
     <div style={{ fontSize: '15px' }}>
       <div
         style={{
@@ -66,4 +61,6 @@ const ConversationApp = () => {
   );
 };
 
-export default ConversationApp;
+const mapStateToProps = (state) => ({ conversation: state.conversation });
+
+export default connect(mapStateToProps, { getConversation })(ConversationApp);
